@@ -7,7 +7,7 @@
 
 .auth-card__intro {
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 
 .auth-card__title {
@@ -30,12 +30,16 @@
 .auth-form {
   display: grid;
   gap: 32px;
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .auth-form__fields {
   display: grid;
-  gap: 18px;
+  gap: 14px;
+}
+
+.auth-page--login .auth-form {
+  margin-top: 40px;
 }
 
 .auth-field {
@@ -164,6 +168,19 @@
   .auth-card__description {
     font-size: 20px;
     line-height: 1.5;
+  }
+
+  .auth-card__intro {
+    gap: 20px;
+  }
+
+  .auth-form,
+  .auth-page--login .auth-form {
+    margin-top: 32px;
+  }
+
+  .auth-form__fields {
+    gap: 18px;
   }
 
   .auth-form__submit {

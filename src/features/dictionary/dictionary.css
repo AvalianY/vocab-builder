@@ -12,7 +12,7 @@
 
 .dashboard {
   display: grid;
-  gap: 16px;
+  gap: 40px;
 }
 
 .dashboard__filters {
@@ -173,7 +173,7 @@
 
 .dashboard__summary {
   display: grid;
-  gap: 16px;
+  gap: 8px;
 }
 
 .dashboard__statistic {
@@ -248,7 +248,7 @@
 }
 
 .words-table__cell {
-  padding: 18px 12px;
+  padding: 16px 14px;
   border-right: 1px solid var(--color-border);
   font-size: 14px;
   font-weight: 500;
@@ -451,16 +451,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 10px;
   margin-top: 32px;
 }
 
 .pagination__button,
 .pagination__ellipsis {
   display: grid;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
   place-items: center;
 }
 
@@ -499,9 +499,9 @@
   z-index: 850;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 16px;
+  padding: 189px 16px 16px;
   overflow-y: auto;
   background: rgba(18, 20, 23, 0.2);
 }
@@ -549,8 +549,8 @@
 
 .word-form {
   display: grid;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 0;
+  margin-top: 16px;
 }
 
 .word-modal--edit .word-form {
@@ -564,17 +564,40 @@
 
 .word-form__verb-type {
   display: grid;
-  gap: 4px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .word-form__verb-hint {
   font-size: 10px;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .word-form__fields {
   display: grid;
-  gap: 18px;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.word-form__verb-type:not(:has(.word-form__verb-hint)) + .word-form__fields {
+  margin-top: 32px;
+}
+
+.word-form__category + .word-form__fields {
+  margin-top: 32px;
+}
+
+.word-modal--edit .word-form__fields {
+  margin-top: 0;
+}
+
+.word-modal .verb-type-options {
+  min-height: 18px;
+}
+
+.word-modal .verb-type-options__option svg {
+  width: 18px;
+  height: 18px;
 }
 
 .word-field {
@@ -621,7 +644,7 @@
 .word-form__actions {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 32px;
 }
 
 .word-form__primary,
@@ -642,6 +665,7 @@
 }
 
 .word-form__primary {
+  flex: 0 0 159px;
   color: var(--color-text-primary);
   background: var(--color-surface);
   border: 1px solid var(--color-surface);
@@ -704,15 +728,24 @@
     width: 343px;
   }
 
-  .pagination__button,
-  .pagination__ellipsis {
-    width: 32px;
-    height: 32px;
-    flex-basis: 32px;
-  }
 }
 
 @media (max-width: 374px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .pagination__button,
+  .pagination__ellipsis {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .word-form__primary {
+    flex-basis: 50%;
+  }
+
   .words-table__cell,
   .words-table th.words-table__cell {
     font-size: 13px;
@@ -721,11 +754,11 @@
 
 @media (min-width: 768px) {
   .dictionary-page__container {
-    padding: 40px 32px 64px;
+    padding: 80px 32px 64px;
   }
 
   .dashboard {
-    gap: 20px;
+    gap: 28px;
   }
 
   .dashboard__filters {
@@ -764,6 +797,12 @@
     padding: 22px 18px;
     font-size: 18px;
     overflow-wrap: normal;
+  }
+
+  .words-table-wrap {
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--color-surface);
   }
 
   .words-table th.words-table__cell {
@@ -827,12 +866,17 @@
   }
 
   .pagination {
-    gap: 8px;
+    gap: 10px;
+    margin-top: 28px;
   }
 
   .modal {
     padding: 48px 64px;
     border-radius: 30px;
+  }
+
+  .modal-backdrop {
+    padding-top: 254px;
   }
 
   .modal__close {
@@ -853,7 +897,7 @@
   }
 
   .word-form {
-    gap: 20px;
+    gap: 0;
     margin-top: 32px;
   }
 
@@ -863,6 +907,28 @@
 
   .word-form__fields {
     gap: 18px;
+    margin-top: 16px;
+  }
+
+  .word-form__verb-type:not(:has(.word-form__verb-hint)) + .word-form__fields {
+    margin-top: 38px;
+  }
+
+  .word-form__category + .word-form__fields {
+    margin-top: 32px;
+  }
+
+  .word-modal--edit .word-form__fields {
+    margin-top: 0;
+  }
+
+  .word-modal .verb-type-options {
+    min-height: 24px;
+  }
+
+  .word-modal .verb-type-options__option svg {
+    width: 20px;
+    height: 20px;
   }
 
   .word-field {
@@ -895,7 +961,12 @@
   }
 
   .word-form__actions {
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .word-form__primary {
+    flex: 1;
   }
 
   .word-form__primary,
@@ -913,6 +984,10 @@
 }
 
 @media (min-width: 1440px) {
+  .modal-backdrop {
+    padding-top: 220px;
+  }
+
   .dictionary-page__container {
     padding: 80px 100px 80px;
   }
@@ -930,6 +1005,11 @@
 
   .words-table-wrap {
     margin-top: 28px;
+  }
+
+  .words-table__cell {
+    padding-right: 22px;
+    padding-left: 22px;
   }
 
   .words-table__cell,
