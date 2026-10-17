@@ -1,0 +1,32 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.brand__mark {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+}
+
+.brand__name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: -0.36px;
+}
+
+.brand--light {
+  color: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .brand__name {
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.44px;
+  }
+}

@@ -1,0 +1,14 @@
+.authorized-layout {
+  min-height: 100vh;
+  background: var(--color-app-background);
+}
+
+.authorized-layout__main {
+  min-height: calc(100vh - 80px);
+}
+
+@media (min-width: 768px) {
+  .authorized-layout__main {
+    min-height: calc(100vh - 88px);
+  }
+}

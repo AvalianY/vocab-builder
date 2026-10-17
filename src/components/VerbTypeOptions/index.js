@@ -1,0 +1,1 @@
+export { VerbTypeOptions } from './VerbTypeOptions';
