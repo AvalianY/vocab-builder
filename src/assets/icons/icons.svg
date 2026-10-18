@@ -151,4 +151,26 @@
   <symbol id="icon-user" viewBox="0 0 24 24" fill="none">
     <path d="M12 4C13.0609 4 14.0783 4.42143 14.8284 5.17158C15.5786 5.92172 16 6.93914 16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17158 10.8284C8.42143 10.0783 8 9.06087 8 8C8 6.93914 8.42143 5.92172 9.17158 5.17158C9.92172 4.42143 10.9391 4 12 4ZM12 20C12 20 20 20 20 18C20 15.6 16.1 13 12 13C7.9 13 4 15.6 4 18C4 20 12 20 12 20Z" fill="currentColor" fill-opacity="0.7"/>
   </symbol>
+
+  <symbol id="icon-validation-error" viewBox="0 0 16 16" fill="none">
+    <defs>
+      <clipPath id="icon-validation-error-clip-0">
+        <rect width="16" height="16" fill="white"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#icon-validation-error-clip-0)">
+      <path d="M7.99992 14.6667C4.31792 14.6667 1.33325 11.682 1.33325 8C1.33325 4.318 4.31792 1.33333 7.99992 1.33333C11.6819 1.33333 14.6666 4.318 14.6666 8C14.6666 11.682 11.6819 14.6667 7.99992 14.6667ZM7.33325 10V11.3333H8.66659V10H7.33325ZM7.33325 4.66667V8.66667H8.66659V4.66667H7.33325Z" fill="#D80027"/>
+    </g>
+  </symbol>
+
+  <symbol id="icon-validation-success" viewBox="0 0 16 16" fill="none">
+    <defs>
+      <clipPath id="icon-validation-success-clip-0">
+        <rect width="16" height="16" fill="white"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#icon-validation-success-clip-0)">
+      <path d="M7.99992 14.6667C4.31792 14.6667 1.33325 11.682 1.33325 8C1.33325 4.318 4.31792 1.33333 7.99992 1.33333C11.6819 1.33333 14.6666 4.318 14.6666 8C14.6666 11.682 11.6819 14.6667 7.99992 14.6667ZM7.22925 10.99L11.9426 6.276L10.9999 5.33333L7.22925 9.10467L5.34325 7.21867L4.40058 8.16133L7.22925 10.99Z" fill="#3CBF61"/>
+    </g>
+  </symbol>
 </svg>

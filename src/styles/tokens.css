@@ -10,6 +10,8 @@
   --color-border: rgba(18, 20, 23, 0.1);
   --color-table-border: #dbdbdb;
   --color-app-background: #f8f8f8;
+  --color-error: #d80027;
+  --color-success: #3cbf61;
   --color-progress: #2bd627;
   --radius-control: 15px;
   --radius-pill: 30px;

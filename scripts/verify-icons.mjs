@@ -33,6 +33,8 @@ const expectedSymbolIds = [
   'icon-search',
   'icon-trash',
   'icon-user',
+  'icon-validation-error',
+  'icon-validation-success',
 ];
 
 const symbolIds = [...sprite.matchAll(/<symbol\s+id="([^"]+)"/g)].map(

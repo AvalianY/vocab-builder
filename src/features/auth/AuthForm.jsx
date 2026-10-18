@@ -47,14 +47,20 @@ export function AuthForm({ mode }) {
   const [login, loginState] = useLoginMutation();
   const [register, registerState] = useRegisterMutation();
   const {
-    formState: { errors },
+    formState: { dirtyFields, errors, submitCount, touchedFields },
     handleSubmit,
     register: registerField,
   } = useForm({
     resolver: yupResolver(isRegister ? registerSchema : loginSchema),
-    mode: 'onSubmit',
+    mode: 'onTouched',
   });
   const isSubmitting = loginState.isLoading || registerState.isLoading;
+  const isFieldValid = (name) =>
+    Boolean(
+      dirtyFields[name] &&
+        (touchedFields[name] || submitCount > 0) &&
+        !errors[name],
+    );
 
   const onSubmit = async (values) => {
     try {
@@ -93,6 +99,7 @@ export function AuthForm({ mode }) {
               autoComplete="name"
               registration={registerField('name')}
               error={errors.name}
+              valid={isFieldValid('name')}
             />
           ) : null}
 
@@ -105,6 +112,7 @@ export function AuthForm({ mode }) {
             inputMode="email"
             registration={registerField('email')}
             error={errors.email}
+            valid={isFieldValid('email')}
           />
 
           <PasswordField
@@ -112,6 +120,7 @@ export function AuthForm({ mode }) {
             autoComplete={isRegister ? 'new-password' : 'current-password'}
             registration={registerField('password')}
             error={errors.password}
+            valid={isFieldValid('password')}
           />
         </div>
 

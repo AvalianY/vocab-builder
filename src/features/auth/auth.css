@@ -52,14 +52,21 @@
   min-height: 56px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
+  transition: border-color 250ms ease;
 }
 
 .auth-field__control:focus-within {
   border-color: var(--color-accent);
 }
 
-.auth-field__control--error {
-  border-color: var(--color-accent);
+.auth-field__control--error,
+.auth-field__control--error:focus-within {
+  border-color: var(--color-error);
+}
+
+.auth-field__control--valid,
+.auth-field__control--valid:focus-within {
+  border-color: var(--color-success);
 }
 
 .auth-field__input {
@@ -98,10 +105,27 @@
   transition: color 250ms ease;
 }
 
-.auth-field__error {
-  margin: 0 0 0 18px;
+.auth-field__message {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
   font-size: 12px;
   line-height: 1.35;
+}
+
+.auth-field__message-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.auth-field__message--error {
+  color: var(--color-error);
+}
+
+.auth-field__message--success {
+  color: var(--color-success);
 }
 
 .auth-form__actions {
@@ -139,6 +163,12 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .auth-field__control:not(.auth-field__control--error):not(
+      .auth-field__control--valid
+    ):hover {
+    border-color: var(--color-accent);
+  }
+
   .auth-field__toggle:hover {
     color: var(--color-accent);
   }

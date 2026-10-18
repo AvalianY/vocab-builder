@@ -22,6 +22,8 @@ const ICON_METADATA = Object.freeze({
   search: { width: 20, height: 20, viewBox: '0 0 20 20', color: '#121417' },
   trash: { width: 20, height: 20, viewBox: '0 0 20 20', color: '#121417' },
   user: { width: 24, height: 24, viewBox: '0 0 24 24', color: '#FCFCFC' },
+  'validation-error': { width: 16, height: 16, viewBox: '0 0 16 16' },
+  'validation-success': { width: 16, height: 16, viewBox: '0 0 16 16' },
 });
 
 export function Icon({
