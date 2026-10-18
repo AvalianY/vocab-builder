@@ -1,8 +1,26 @@
+import { useEffect, useState } from 'react';
+
 import { Icon } from '../Icon';
 
-function getPageItems(page, totalPages) {
-  if (totalPages <= 5) {
+const MOBILE_PAGINATION_QUERY = '(max-width: 767px)';
+
+function getPageItems(page, totalPages, compact = false) {
+  const visiblePages = compact ? 4 : 5;
+
+  if (totalPages <= visiblePages) {
     return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  if (compact) {
+    if (page <= 2) {
+      return [1, 2, 'end-gap', totalPages];
+    }
+
+    if (page >= totalPages - 1) {
+      return [1, 'start-gap', totalPages - 1, totalPages];
+    }
+
+    return [1, 'start-gap', page, totalPages];
   }
 
   if (page <= 3) {
@@ -16,7 +34,29 @@ function getPageItems(page, totalPages) {
   return [1, 'start-gap', page, 'end-gap', totalPages];
 }
 
+function useCompactPagination() {
+  const [isCompact, setIsCompact] = useState(() =>
+    typeof window === 'undefined'
+      ? false
+      : window.matchMedia(MOBILE_PAGINATION_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_PAGINATION_QUERY);
+    const updatePaginationMode = () => setIsCompact(mediaQuery.matches);
+
+    updatePaginationMode();
+    mediaQuery.addEventListener('change', updatePaginationMode);
+
+    return () => mediaQuery.removeEventListener('change', updatePaginationMode);
+  }, []);
+
+  return isCompact;
+}
+
 export function Pagination({ page, totalPages, onPageChange }) {
+  const isCompact = useCompactPagination();
+
   if (totalPages <= 1) {
     return null;
   }
@@ -25,7 +65,7 @@ export function Pagination({ page, totalPages, onPageChange }) {
     onPageChange(Math.min(totalPages, Math.max(1, nextPage)));
   };
 
-  const pageItems = getPageItems(page, totalPages);
+  const pageItems = getPageItems(page, totalPages, isCompact);
 
   return (
     <nav className="pagination" aria-label="Words pages">
