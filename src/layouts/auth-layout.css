@@ -1,8 +1,14 @@
 .auth-page {
+  position: relative;
   min-height: 100vh;
   padding: 16px 16px 0;
   overflow: hidden;
-  background: var(--color-surface);
+  background: var(--color-app-background);
+}
+
+.auth-page__background {
+  display: none;
+  pointer-events: none;
 }
 
 .auth-page__header {
@@ -13,6 +19,8 @@
 }
 
 .auth-page__main {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,8 +101,37 @@
     margin-top: 140px;
   }
 
+  .auth-page__background {
+    position: absolute;
+    max-width: none;
+  }
+
+  .auth-page__background--tablet {
+    top: 587px;
+    right: calc((100% - 768px) / 2);
+    display: block;
+    width: 525px;
+    height: 437px;
+  }
+
   .auth-visual {
+    position: absolute;
+    top: 696px;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .auth-visual__image {
     display: none;
+  }
+
+  .auth-visual__caption,
+  .auth-page--register .auth-visual__caption {
+    display: block;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .auth-page .auth-card {
@@ -142,15 +179,17 @@
   }
 
   .auth-visual {
+    position: static;
     display: block;
     grid-column: 2;
     grid-row: 1;
-    justify-self: end;
+    justify-self: start;
     width: min(100%, 498px);
     margin-top: 39px;
   }
 
   .auth-visual__image {
+    display: block;
     height: 435px;
     object-fit: contain;
   }
@@ -172,5 +211,20 @@
 
   .auth-page--login .auth-visual {
     margin-top: -11px;
+  }
+
+  .auth-page__background {
+    top: 334px;
+    right: calc((100% - 1440px) / 2);
+  }
+
+  .auth-page__background--tablet {
+    display: none;
+  }
+
+  .auth-page__background--desktop {
+    display: block;
+    width: 564px;
+    height: 466px;
   }
 }

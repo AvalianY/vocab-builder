@@ -188,6 +188,7 @@
   color: var(--color-text-primary);
   font-size: 20px;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .dashboard__actions {
@@ -227,9 +228,9 @@
   width: 100%;
   color: var(--color-text-primary);
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-table-border);
   border-spacing: 0;
-  border-radius: var(--radius-control);
+  border-radius: 8px;
   table-layout: fixed;
 }
 
@@ -237,19 +238,20 @@
   background: var(--color-accent-soft);
   font-weight: 500;
   text-align: left;
+  white-space: nowrap;
 }
 
 .words-table th:first-child {
-  border-top-left-radius: var(--radius-control);
+  border-top-left-radius: 8px;
 }
 
 .words-table th:last-child {
-  border-top-right-radius: var(--radius-control);
+  border-top-right-radius: 8px;
 }
 
 .words-table__cell {
-  padding: 16px 14px;
-  border-right: 1px solid var(--color-border);
+  padding: 16px;
+  border-right: 1px solid var(--color-table-border);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
@@ -262,7 +264,7 @@
 }
 
 .words-table tbody .words-table__cell {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-table-border);
 }
 
 .words-table__cell:last-child {
@@ -346,6 +348,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .words-table__header-flag {
@@ -354,9 +357,11 @@
 }
 
 .progress-bar {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: max-content;
+  margin-inline: auto;
   gap: 8px;
   white-space: nowrap;
 }
@@ -504,6 +509,10 @@
   padding: 189px 16px 16px;
   overflow-y: auto;
   background: rgba(18, 20, 23, 0.2);
+}
+
+.edit-word-backdrop {
+  padding-top: 251px;
 }
 
 .modal {
@@ -728,6 +737,22 @@
     width: 343px;
   }
 
+  .words-table--recommend .words-table__cell--en {
+    width: 26.25%;
+  }
+
+  .words-table--recommend .words-table__cell--ua {
+    width: 33.75%;
+  }
+
+  .words-table--recommend .words-table__cell--category {
+    width: 29%;
+  }
+
+  .words-table--recommend .words-table__cell--recommend-action {
+    width: 11%;
+  }
+
 }
 
 @media (max-width: 374px) {
@@ -788,13 +813,17 @@
     line-height: 1.5;
   }
 
+  .dashboard__statistic strong {
+    line-height: 1.5;
+  }
+
   .verb-type-options__option {
     font-size: 16px;
     line-height: 1.5;
   }
 
   .words-table__cell {
-    padding: 22px 18px;
+    padding: 22px;
     font-size: 18px;
     overflow-wrap: normal;
   }
@@ -802,7 +831,7 @@
   .words-table-wrap {
     margin-top: 28px;
     padding: 18px;
-    background: var(--color-surface);
+    background: var(--color-white);
   }
 
   .words-table th.words-table__cell {
@@ -814,13 +843,17 @@
     width: 24%;
   }
 
+  .words-table__cell--ua {
+    width: 25%;
+  }
+
   .words-table__cell--category {
     display: table-cell;
-    width: 20%;
+    width: 23%;
   }
 
   .words-table__cell--progress {
-    width: 22%;
+    width: 18%;
     text-align: left;
   }
 
@@ -830,21 +863,37 @@
 
   .words-table--recommend .words-table__cell--en,
   .words-table--recommend .words-table__cell--ua {
-    width: 30%;
+    width: 26.5%;
+  }
+
+  .words-table--recommend .words-table__cell--ua {
+    width: 28%;
   }
 
   .words-table--recommend .words-table__cell--category {
-    width: 21%;
+    width: 23.5%;
   }
 
   .words-table--recommend .words-table__cell--recommend-action {
-    width: 19%;
+    width: 22%;
     text-align: left;
   }
 
   .recommend-action {
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    font-size: 14px;
+    line-height: 1.4;
     text-align: left;
+  }
+
+  .recommend-action span {
+    white-space: nowrap;
+  }
+
+  .words-table__cell--recommend-action {
+    padding: 14px;
   }
 
   .word-actions__trigger {
@@ -865,6 +914,10 @@
     display: block;
   }
 
+  .progress-bar {
+    margin-inline: 0;
+  }
+
   .pagination {
     gap: 10px;
     margin-top: 28px;
@@ -877,6 +930,15 @@
 
   .modal-backdrop {
     padding-top: 254px;
+  }
+
+  .edit-word-backdrop {
+    padding-top: 380px;
+  }
+
+  .word-modal--edit {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   .modal__close {
@@ -988,6 +1050,10 @@
     padding-top: 220px;
   }
 
+  .edit-word-backdrop {
+    padding-top: 346px;
+  }
+
   .dictionary-page__container {
     padding: 80px 100px 80px;
   }
@@ -1018,9 +1084,53 @@
     line-height: 1.4;
   }
 
+  .words-table__cell--en {
+    width: 23.2%;
+  }
+
+  .words-table__cell--ua {
+    width: 22.8%;
+  }
+
+  .words-table__cell--category {
+    width: 21.7%;
+  }
+
+  .words-table__cell--progress {
+    width: 21.1%;
+  }
+
+  .words-table__cell--actions {
+    width: 11.2%;
+  }
+
+  .words-table--recommend .words-table__cell--en {
+    width: 30.7%;
+  }
+
+  .words-table--recommend .words-table__cell--ua {
+    width: 30.3%;
+  }
+
+  .words-table--recommend .words-table__cell--category {
+    width: 21.7%;
+  }
+
+  .words-table--recommend .words-table__cell--recommend-action {
+    width: 17.3%;
+  }
+
   .recommend-action {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     font-size: 16px;
     line-height: 1.5;
+  }
+
+
+  .words-table__cell--recommend-action {
+    padding: 22px;
   }
 
   .word-actions__trigger {

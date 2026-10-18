@@ -1,5 +1,5 @@
 .app-header {
-  background: var(--color-surface);
+  background: var(--color-white);
 }
 
 .app-header__inner {
@@ -11,6 +11,7 @@
 }
 
 .app-header__inner > .brand {
+  flex: 0 0 auto;
   min-width: 0;
   gap: 16px;
 }
@@ -36,14 +37,17 @@
 }
 
 .app-header__account {
+  min-width: 0;
   gap: 8px;
 }
 
 .user-summary {
+  min-width: 0;
   gap: 8px;
 }
 
 .user-summary__name {
+  min-width: 0;
   max-width: 90px;
   overflow: hidden;
   font-size: 16px;
@@ -247,6 +251,10 @@
   .app-header__inner {
     width: 375px;
     margin: 0 auto;
+  }
+
+  .app-header__account > .user-summary .user-summary__name {
+    max-width: 56px;
   }
 }
 

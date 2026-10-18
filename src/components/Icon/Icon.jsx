@@ -2,6 +2,8 @@ import iconSpriteUrl from '../../assets/icons/icons.svg?url';
 
 const ICON_METADATA = Object.freeze({
   'arrow-right': { width: 20, height: 20, viewBox: '0 0 20 20', color: '#85AA9F' },
+  'auth-background-desktop': { width: 564, height: 466, viewBox: '0 0 564 466' },
+  'auth-background-tablet': { width: 525, height: 437, viewBox: '0 0 525 437' },
   'chevron-down': { width: 20, height: 20, viewBox: '0 0 20 20', color: '#FCFCFC' },
   close: { width: 32, height: 32, viewBox: '0 0 32 32', color: '#FCFCFC' },
   edit: { width: 20, height: 20, viewBox: '0 0 20 20', color: '#121417' },

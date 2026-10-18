@@ -161,7 +161,7 @@ export function WordsTable({
         ...commonColumns,
         {
           accessorKey: 'progress',
-          header: 'Progress',
+          header: () => <HeaderLabel>Progress</HeaderLabel>,
           cell: ({ getValue }) => <ProgressBar value={getValue()} />,
         },
         {

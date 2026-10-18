@@ -41,6 +41,7 @@ export function EditWordModal({ word, onClose }) {
   return (
     <Modal
       ariaLabel="Edit word"
+      backdropClassName="edit-word-backdrop"
       className="word-modal word-modal--edit"
       onClose={onClose}
     >

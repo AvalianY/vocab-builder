@@ -3,6 +3,26 @@
     <path d="M3.33337 10H16.6667M13.3334 13.3334L16.6667 10L13.3334 6.66669" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 
+  <symbol id="icon-auth-background-desktop" viewBox="0 0 564 466" fill="none">
+    <path d="M58.7119 2.23114e-05L754.006 75.8887L508.059 629.844L2.1427e-05 235.481L58.7119 2.23114e-05Z" fill="url(#icon-auth-background-desktop-gradient-0)"/>
+    <defs>
+      <linearGradient id="icon-auth-background-desktop-gradient-0" x1="543.72" y1="395.96" x2="281.79" y2="223.489" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#85AA9F" stop-opacity="0.51"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </symbol>
+
+  <symbol id="icon-auth-background-tablet" viewBox="0 0 525 437" fill="none">
+    <path d="M98.7107 1.42657e-05L770.264 195.472L431.86 698.303L-2.80766e-05 221.708L98.7107 1.42657e-05Z" fill="url(#icon-auth-background-tablet-gradient-0)"/>
+    <defs>
+      <linearGradient id="icon-auth-background-tablet-gradient-0" x1="507.592" y1="474.166" x2="279.591" y2="258.831" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#85AA9F" stop-opacity="0.51"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </symbol>
+
   <symbol id="icon-chevron-down" viewBox="0 0 20 20" fill="none">
     <mask id="icon-chevron-down-mask-0" fill="white">
       <path d="M10 13.752L3.75 7.50195L4.625 6.62695L10 12.002L15.375 6.62695L16.25 7.50195L10 13.752Z"/>

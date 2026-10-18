@@ -13,6 +13,8 @@ const [sprite, iconComponent] = await Promise.all([
 
 const expectedSymbolIds = [
   'icon-arrow-right',
+  'icon-auth-background-desktop',
+  'icon-auth-background-tablet',
   'icon-chevron-down',
   'icon-close',
   'icon-edit',
